@@ -16,6 +16,6 @@ def login():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
-@app.route("/auth/login", methods=["POST"])
+@app.route("/auth/login", methods=["GET", "POST"])
 def login():
     return {"message": "This is login endpoint"}
