@@ -5,6 +5,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "super-secret-key"  # change this in production
 
+# ✅ Token never expires (lifetime)
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = False
+
 jwt = JWTManager(app)
 
 # In-memory "database" (replace with real DB later)
